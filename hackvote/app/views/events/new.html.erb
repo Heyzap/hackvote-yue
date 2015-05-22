@@ -2,27 +2,27 @@
 <!DOCTYPE html>
 <div>
   <%= form_for(@event) do |f| %>
-  	<%= f.label :title %>
-  	<%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  	<%= f.submit "Create new Hackday!", class: "btn btn-primary" %>
-	<% end %>
+    <%= f.submit "Create new Hackday!", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <div>
-	<p>Current Hackdays</p>
-	<% @cur_events.each do |event| %>
-		<li>
-			<%= link_to event.title, event %>
-		</li>
-	<% end %>
+  <p>Current Hackdays</p>
+  <% @cur_events.each do |event| %>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  <% end %>
 </div>
 
 <div>
-	<p>Past Hackdays</p>
-	<% @past_events.each do |event| %>
-		<li>
-			<%= link_to event.title, event %>
-		</li>
-	<% end %>
+  <p>Past Hackdays</p>
+  <% @past_events.each do |event| %>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  <% end %>
 </div>

@@ -4,11 +4,11 @@
 <h2>Projects</h2>
 
 <div>
-	<h3>Voting closed!</h3>
-	<% @projects.each do |project| %>
-	<li>
-		<%= "#{project.name} by #{project.creators} - #{project.votes.to_s}" %>
-	</li>
-	<% end %>
+  <h3>Voting closed!</h3>
+  <% @projects.each do |project| %>
+  <li>
+    <%= "#{project.name} by #{project.creators} - #{project.votes.to_s}" %>
+  </li>
+  <% end %>
 </div>
 

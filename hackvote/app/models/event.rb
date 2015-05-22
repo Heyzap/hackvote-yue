@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 255 }
 
   def project_feed
-  	Project.where("event_id = ?", id)
+    Project.where(:event_id => id)
   end
   
 end
