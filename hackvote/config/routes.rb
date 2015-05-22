@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   post 'close' => 'events#close'
 
   resources :events do
-    resources :projects
+    post 'close', on: :member
+    resources :projects do
+      post 'vote', on: :member
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
