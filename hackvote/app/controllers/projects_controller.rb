@@ -7,12 +7,6 @@ class ProjectsController < ApplicationController
 		redirect_to :back
 	end
 
-	def show
-	end
-
-	def destroy
-	end
-
 	def vote
 		@project = Project.find_by(id: params[:id])
 		@event = Event.find_by(id: @project.event_id)

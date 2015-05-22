@@ -14,7 +14,7 @@
 <div>
   <h2>Projects</h2>
   <% @projects.each do |project| %>
-    <% if not(project.name.nil? or project.creators.nil?) %>
+    <% if not(project.name.nil? || project.creators.nil?) %>
     <li>
         <%= "#{project.name} by #{project.creators}"  %>
     <!-- show button only if have votes remaining -->

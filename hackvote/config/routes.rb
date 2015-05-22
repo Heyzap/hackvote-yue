@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root        'events#new'
 
-  resources :events do
+  resources :events, only: [:new, :create, :show] do
     post 'close', on: :member
-    resources :projects do
+    resources :projects, only: [:create] do
       post 'vote', on: :member
     end
   end
