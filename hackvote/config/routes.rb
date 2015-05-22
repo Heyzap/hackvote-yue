@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root        'events#new'
+
+  resources :events, only: [:new, :create, :show] do
+    post 'close', on: :member
+    resources :projects, only: [:create] do
+      post 'vote', on: :member
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
