@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root        'events#new'
 
+  post 'vote' => 'projects#vote'
+  post 'close' => 'events#close'
+
   resources :events
   resources :projects
 

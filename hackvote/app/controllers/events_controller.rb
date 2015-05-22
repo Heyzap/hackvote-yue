@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	include ApplicationHelper
 
 	def new
 		@event = Event.new
@@ -20,10 +21,16 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		@projects = @event.project_feed
 		# make sure the user has the cookie limit
-		cookies.permanent
 		cookies.permanent[@event.id] ||= 3
 		@event_name = @event.title
 		@project = @event.projects.build
+	end
+
+	def close
+		@event = get_event
+		@projects = @event.project_feed
+		@event.completed = true
+		@event.save
 	end
 
 

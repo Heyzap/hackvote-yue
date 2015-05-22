@@ -7,4 +7,11 @@ module ApplicationHelper
   	  page_title
     end
   end
+
+  private
+
+		def get_event
+			@event = Event.find_by(id: params[:id])
+		end
+
 end
