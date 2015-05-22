@@ -1,5 +1,4 @@
-<%= form_for(@project) do |f| %>
-	<%= hidden_field_tag :id, @event.id %>
+<%= form_for @project , url: event_projects_path(@event) do |f| %>
 
 	<%= f.label :name %>
 	<%= f.text_field :name %>
