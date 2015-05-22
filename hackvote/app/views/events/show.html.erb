@@ -1,0 +1,27 @@
+<% provide(:title, @event.title) %>
+
+
+<h1><%= @event.title %></h1>
+<div>
+  <h2>Add new Project</h2>
+  <%= render 'shared/project_form' %>
+  <%= button_to "Close Voting", close_path, params: { id: @event.id }, confirm: "are you sure?" %>
+</div>
+<div>
+  <%= session[@event.id] %> votes remaining
+</div>
+
+<div>
+  <h2>Projects</h2>
+  <% @projects.each do |project| %>
+  	<% if not(project.name.nil? or project.creators.nil?) %>
+	  <li>
+  	    <%= "#{project.name} by #{project.creators}"  %>
+		<!-- show button only if have votes remaining -->
+		<% if session[@event.id].to_i > 0 %>
+		  <%= button_to "vote", vote_path, params: { id: project.id }%>
+		<% end %>
+	  </li>
+	<% end %>
+  <% end %>
+</div>
