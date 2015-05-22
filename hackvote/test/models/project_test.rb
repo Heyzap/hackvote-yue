@@ -4,7 +4,7 @@ class ProjectTest < ActiveSupport::TestCase
   
   def setup
   	@event = events(:example)
-  	@project = @event.projects.build(name: "foobar", creators: "me", event_id: @event.id)
+  	@project = @event.projects.build(name: "foobar", creators: "me")
   end
 
   test "should be valid" do
