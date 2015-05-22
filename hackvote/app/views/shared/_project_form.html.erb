@@ -1,0 +1,10 @@
+<%= form_for(@project) do |f| %>
+	<%= hidden_field_tag :id, @event.id %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :creators %>
+	<%= f.text_field :creators %>
+
+	<%= f.submit "Add Project!", class: "btn btn-primary" %>
+<% end %>

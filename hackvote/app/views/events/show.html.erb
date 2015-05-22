@@ -1,0 +1,14 @@
+<% provide(:title, @event.title) %>
+
+
+<div>
+	<%= render 'shared/project_form' %>
+</div>
+
+<div>
+	<% @projects.each do |project| %>
+		<li>
+			<%= "#{project.name} by #{project.creators}" %>
+		</li>
+	<% end %>
+</div>
