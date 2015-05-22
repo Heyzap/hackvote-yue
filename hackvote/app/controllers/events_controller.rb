@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  NUMBER_OF_VOTES = 3
+  MAX_VOTES = 3
 
   def new
 	  @event = Event.new
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   def create
 	  @event = Event.new(event_params)
 	  if @event.save
-	    session[@event.id] = NUMBER_OF_VOTES 
+	    session[@event.id] = MAX_VOTES 
 	  	redirect_to @event
   	  else
 	  	render 'new'
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   	@event = Event.find_by_id(params[:id].to_i)
   	@projects = @event.projects
 	# make sure the user has the cookie limit
-	session[@event.id] ||= NUMBER_OF_VOTES
+	session[@event.id] ||= MAX_VOTES
 	@project = @event.projects.build
   end
 
