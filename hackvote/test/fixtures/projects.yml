@@ -3,9 +3,9 @@
 one:
   name: MyString
   creators: MyString
-  event_id: 
+  event_id: 1
 
 two:
   name: MyString
   creators: MyString
-  event_id: 
+  event_id: 2

@@ -1,5 +1,5 @@
 class AddVotesToProjects < ActiveRecord::Migration
   def change
-    add_column :projects, :votes, :int, default: 0
+    add_column :projects, :votes, :int, default: 0, null: false
   end
 end

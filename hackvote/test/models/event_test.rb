@@ -21,7 +21,7 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "order should be most recent first" do
-    assert_equal events(:fifth), Event.first
+    assert_equal events(:first), Event.first
   end
 
 end
